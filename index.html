@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador Garagem do Frank</title>
+    <!-- CSS Original - Deve ser carregado primeiro -->
     <link rel="stylesheet" href="style.css">
-    <!-- Adicionar CSS do menu mobile -->
-    <link rel="stylesheet" href="mobile-menu.css">
+    <!-- CSS do Menu Mobile - Carregado depois para não sobrescrever estilos principais -->
+    <link rel="stylesheet" href="mobile-menu-fix.css">
     
     <!-- Google Sign-In -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -293,8 +294,10 @@
         </footer>
     </div>
 
+    <!-- Scripts originais -->
     <script src="script.js"></script>
-    <!-- Adicionar script do menu mobile -->
-    <script src="mobile-menu.js"></script>
+    
+    <!-- Script do menu mobile - Carregado por último -->
+    <script src="mobile-menu-fix.js"></script>
 </body>
 </html>

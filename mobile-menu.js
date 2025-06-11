@@ -1,4 +1,4 @@
-// Menu Mobile para A Garagem do Frank
+// Menu Mobile para A Garagem do Frank - VERSÃO CORRIGIDA
 // Implementação de navegação responsiva para dispositivos móveis
 
 document.addEventListener('DOMContentLoaded', function() {

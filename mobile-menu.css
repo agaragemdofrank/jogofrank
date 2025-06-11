@@ -1,4 +1,4 @@
-/* Estilos para o Menu Mobile - A Garagem do Frank */
+/* Estilos para o Menu Mobile - A Garagem do Frank - VERSÃO CORRIGIDA */
 
 /* Botão Hambúrguer */
 .mobile-menu-toggle {
@@ -7,7 +7,7 @@
     top: 20px;
     right: 20px;
     z-index: 1001;
-    background-color: var(--primary-color);
+    background-color: #ff4d00;
     border: none;
     border-radius: 5px;
     width: 45px;
@@ -60,7 +60,7 @@
     right: -280px;
     width: 280px;
     height: 100vh;
-    background-color: var(--panel-bg);
+    background-color: #1a1a1a;
     z-index: 1000;
     transition: right 0.3s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
@@ -95,19 +95,19 @@
 /* Cabeçalho do Menu */
 .mobile-menu-header {
     padding: 20px;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid #ff4d00;
     text-align: center;
 }
 
 .mobile-menu-logo {
     max-width: 120px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .mobile-menu-title {
     font-family: 'Orbitron', sans-serif;
-    color: var(--primary-color);
+    color: #ff4d00;
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
@@ -131,7 +131,7 @@
 .mobile-menu-nav a {
     display: flex;
     align-items: center;
-    color: var(--text-color);
+    color: #f1f1f1;
     text-decoration: none;
     font-size: 1.1rem;
     padding: 10px;
@@ -141,11 +141,11 @@
 
 .mobile-menu-nav a:hover {
     background-color: rgba(255, 77, 0, 0.1);
-    color: var(--primary-color);
+    color: #ff4d00;
 }
 
 .mobile-menu-nav a.active {
-    background-color: var(--primary-color);
+    background-color: #ff4d00;
     color: white;
 }
 
@@ -170,7 +170,7 @@
 
 .mobile-menu-player-name {
     font-weight: 600;
-    color: var(--accent-color);
+    color: #ffcc00;
 }
 
 .mobile-menu-player-nick {
@@ -197,7 +197,7 @@
 }
 
 .mobile-menu-player-stat-value {
-    color: var(--accent-color);
+    color: #ffcc00;
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -222,7 +222,7 @@
 }
 
 .mobile-menu-social a:hover {
-    color: var(--primary-color);
+    color: #ff4d00;
 }
 
 .mobile-menu-copyright {
