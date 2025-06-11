@@ -1,0 +1,243 @@
+/* Estilos para o Menu Mobile - A Garagem do Frank */
+
+/* Botão Hambúrguer */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background-color: #ff6a00;
+}
+
+.hamburger-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animação do botão hambúrguer quando ativo */
+.mobile-menu-toggle.active .hamburger-icon span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-icon span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--panel-bg);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+/* Overlay para fechar o menu ao clicar fora */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Cabeçalho do Menu */
+.mobile-menu-header {
+    padding: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+}
+
+.mobile-menu-logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.mobile-menu-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Conteúdo do Menu */
+.mobile-menu-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.mobile-menu-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-nav li {
+    margin-bottom: 15px;
+}
+
+.mobile-menu-nav a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-nav a:hover {
+    background-color: rgba(255, 77, 0, 0.1);
+    color: var(--primary-color);
+}
+
+.mobile-menu-nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.mobile-menu-nav i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Seção do Jogador no Menu */
+.mobile-menu-player {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.mobile-menu-player-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.mobile-menu-player-name {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.mobile-menu-player-nick {
+    font-size: 0.9rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.mobile-menu-player-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.mobile-menu-player-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-player-stat-label {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.mobile-menu-player-stat-value {
+    color: var(--accent-color);
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Rodapé do Menu */
+.mobile-menu-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.mobile-menu-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.mobile-menu-social a {
+    color: #888;
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.mobile-menu-social a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-copyright {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Ajustar posição do status de conexão para não sobrepor o botão do menu */
+    .connection-status {
+        top: 75px;
+    }
+}

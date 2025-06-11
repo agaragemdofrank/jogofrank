@@ -3,254 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrankTurbo.com - A Garagem do Frank</title>
-    <meta name="description" content="Portal oficial da Garagem do Frank - Simulador de arrancada, conteúdo automotivo e muito mais!">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Simulador Garagem do Frank</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicionar CSS do menu mobile -->
+    <link rel="stylesheet" href="mobile-menu.css">
+    
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <img src="images/logo.png" alt="Garagem do Frank" class="logo-img">
-                    <span class="logo-text">FrankTurbo</span>
-                </div>
-                
-                <div class="nav-menu" id="nav-menu">
-                    <a href="#home" class="nav-link active">Início</a>
-                    <a href="pages/biografia.html" class="nav-link">Quem é o Frank?</a>
-                    <a href="pages/historia.html" class="nav-link">Nossa História</a>
-                    <a href="pages/parceiros.html" class="nav-link">Parceiros</a>
-                    <a href="pages/produtos.html" class="nav-link">Produtos</a>
-                    <a href="pages/videos.html" class="nav-link">Vídeos</a>
-                    <a href="pages/ajudar.html" class="nav-link">Ajudar</a>
-                    <a href="pages/contato.html" class="nav-link">Contato</a>
-                </div>
-                
-                <div class="nav-toggle" id="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+    <!-- Modal de Cadastro -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="images/logo.png" alt="Logo Garagem do Frank" class="modal-logo">
+                <h2>Bem-vindo ao Simulador!</h2>
+                <p>Teste seus reflexos como um verdadeiro piloto!</p>
             </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-left">
-                        <h1 class="hero-title">
-                            Bem-vindo à <span class="highlight">Garagem do Frank</span>
-                        </h1>
-                        <p class="hero-subtitle">
-                            O melhor conteúdo automotivo do Brasil! Projetos épicos, simulador de arrancada e muito mais!
-                        </p>
-                        
-                        <!-- Game Card -->
-                        <div class="game-card" onclick="redirectToGame()">
-                            <div class="game-card-header">
-                                <div class="game-icon">🏎️</div>
-                                <div class="game-info">
-                                    <h3>Simulador de Arrancada</h3>
-                                    <p>Teste seus reflexos no simulador mais viciante!</p>
-                                </div>
-                                <div class="play-button">▶</div>
-                            </div>
-                            <div class="game-stats">
-                                <div class="stat">
-                                    <span class="stat-number" id="total-players">0</span>
-                                    <span class="stat-label">Jogadores</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number" id="total-games">0</span>
-                                    <span class="stat-label">Partidas</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number" id="best-record">N/As</span>
-                                    <span class="stat-label">Recorde</span>
-                                </div>
-                            </div>
-                            <div class="game-cta">
-                                <span>🎮 Clique para jogar agora!</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="hero-actions">
-                            <button class="btn btn-primary" onclick="redirectToGame()">
-                                🎮 Jogar Agora
-                            </button>
-                            <button class="btn btn-secondary" onclick="scrollToSection('about')">
-                                📖 Conhecer Frank
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-right">
-                        <!-- Simplified World Ranking -->
-                        <div class="ranking-card-simple">
-                            <div class="ranking-header-simple">
-                                <h3>🏆 Top Pilotos</h3>
-                                <span class="ranking-subtitle">Melhores tempos</span>
-                            </div>
-                            <div class="ranking-list-simple" id="ranking-list">
-                                <div class="ranking-item-simple">
-                                    <span class="rank-pos">1º</span>
-                                    <span class="rank-nick">SpeedDemon</span>
-                                    <span class="rank-time">0.089s</span>
-                                </div>
-                                <div class="ranking-item-simple">
-                                    <span class="rank-pos">2º</span>
-                                    <span class="rank-nick">TurboFrank</span>
-                                    <span class="rank-time">0.092s</span>
-                                </div>
-                                <div class="ranking-item-simple">
-                                    <span class="rank-pos">3º</span>
-                                    <span class="rank-nick">RocketMan</span>
-                                    <span class="rank-time">0.095s</span>
-                                </div>
-                                <div class="ranking-item-simple">
-                                    <span class="rank-pos">4º</span>
-                                    <span class="rank-nick">NitroQueen</span>
-                                    <span class="rank-time">0.098s</span>
-                                </div>
-                                <div class="ranking-item-simple">
-                                    <span class="rank-pos">5º</span>
-                                    <span class="rank-nick">V8Thunder</span>
-                                    <span class="rank-time">0.101s</span>
-                                </div>
-                            </div>
-                            <div class="ranking-footer-simple">
-                                <button class="btn-ranking-simple" onclick="redirectToGame()">
-                                    🎮 Jogar Agora
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            
+            <!-- Login com Google -->
+            <div class="google-signin-section">
+                <div id="g_id_onload"
+                     data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                     data-callback="handleGoogleSignIn"
+                     data-auto_prompt="false">
                 </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Sobre a Garagem do Frank</h2>
-                    <p>Conheça a história por trás do canal automotivo que conquistou o Brasil</p>
+                <div class="g_id_signin" 
+                     data-type="standard"
+                     data-size="large"
+                     data-theme="filled_blue"
+                     data-text="signin_with"
+                     data-shape="rectangular"
+                     data-logo_alignment="left">
                 </div>
-                
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="card-icon">👤</div>
-                        <h3>Quem é o Frank?</h3>
-                        <p>Conheça a trajetória de Jhonatan Frank, o mecânico que virou fenômeno no YouTube.</p>
-                        <a href="pages/biografia.html" class="card-link">Ler mais →</a>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="card-icon">📖</div>
-                        <h3>Nossa História</h3>
-                        <p>Desde os primeiros vídeos até se tornar referência em conteúdo automotivo.</p>
-                        <a href="pages/historia.html" class="card-link">Ler mais →</a>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Parceiros</h3>
-                        <p>Conheça as marcas e empresas que apoiam nossos projetos épicos.</p>
-                        <a href="pages/parceiros.html" class="card-link">Ver parceiros →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Explore o Portal</h2>
-                    <p>Tudo que você precisa em um só lugar</p>
-                </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card" onclick="window.location.href='pages/produtos.html'">
-                        <div class="feature-icon">🛒</div>
-                        <h3>Loja Oficial</h3>
-                        <p>Camisetas, canecas, peças e produtos exclusivos da Garagem do Frank.</p>
-                    </div>
-                    
-                    <div class="feature-card" onclick="window.location.href='pages/videos.html'">
-                        <div class="feature-icon">📺</div>
-                        <h3>Vídeos</h3>
-                        <p>Todos os vídeos do canal organizados por categoria e projeto.</p>
-                    </div>
-                    
-                    <div class="feature-card" onclick="window.location.href='pages/ajudar.html'">
-                        <div class="feature-icon">💝</div>
-                        <h3>Apoie o Canal</h3>
-                        <p>Doações, patrocínio e formas de ajudar nossos projetos.</p>
-                    </div>
-                    
-                    <div class="feature-card" onclick="window.location.href='pages/contato.html'">
-                        <div class="feature-icon">📞</div>
-                        <h3>Contato</h3>
-                        <p>Entre em contato conosco para parcerias e colaborações.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="Garagem do Frank">
-                        <span>FrankTurbo</span>
-                    </div>
-                    <p>O melhor conteúdo automotivo do Brasil!</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="game/index.html">Simulador</a></li>
-                        <li><a href="pages/biografia.html">Biografia</a></li>
-                        <li><a href="pages/produtos.html">Loja</a></li>
-                        <li><a href="pages/contato.html">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📺 YouTube</a>
-                        <a href="#" class="social-link">📷 Instagram</a>
-                        <a href="#" class="social-link">📘 Facebook</a>
-                    </div>
+                <div class="or-divider">
+                    <span>ou cadastre-se manualmente</span>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2024 FrankTurbo.com - Todos os direitos reservados</p>
+            <form id="signup-form" class="signup-form">
+                <div class="form-group">
+                    <label for="player-name">Nome Completo *</label>
+                    <input type="text" id="player-name" name="name" placeholder="Seu nome completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="player-nick">Nick/Apelido Único *</label>
+                    <input type="text" id="player-nick" name="nick" placeholder="Ex: Frank_Turbo" required maxlength="20">
+                    <div id="nick-status" class="nick-status"></div>
+                    <small>💡 Será usado no ranking e identificação</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="player-instagram">Instagram (opcional)</label>
+                    <input type="text" id="player-instagram" name="instagram" placeholder="@seu_usuario ou apenas usuario">
+                    <small>📸 Para te marcarmos em posts especiais!</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="how-found">Como conheceu o canal?</label>
+                    <select id="how-found" name="howFound">
+                        <option value="">Selecione</option>
+                        <option value="YouTube">YouTube (recomendação)</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="Google">Google (busca)</option>
+                        <option value="Amigos">Indicação de amigos</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                
+                <div class="incentives">
+                    <p>✅ <strong>Benefícios de se cadastrar:</strong></p>
+                    <ul>
+                        <li>🏆 Entre no ranking global com seu nick</li>
+                        <li>🎁 Participe de rifas exclusivas</li>
+                        <li>📸 Seja marcado no Instagram em posts especiais</li>
+                        <li>🏁 Conquistas e pontuação exclusiva</li>
+                        <li>🎯 Desafios diários personalizados</li>
+                    </ul>
+                </div>
+                
+                <button type="submit" class="start-game-btn" id="start-game-btn" disabled>
+                    <span class="btn-text">VERIFICANDO NICK...</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Status de Conexão -->
+    <div id="connection-status" class="connection-status">
+        <span id="status-text">✅ Conectado</span>
+        <span id="sync-info"></span>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Logo Garagem do Frank" class="logo">
+            </div>
+            <h1>Simulador Garagem do Frank</h1>
+            <p class="subtitle">Teste seu tempo de reação como um verdadeiro piloto!</p>
+            <a href="https://youtube.com/@agaragemdofrank?si=q8f8f3gn96KukX4y" target="_blank" class="youtube-button">
+                <svg class="youtube-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Inscreva-se no YouTube
+            </a>
+        </header>
+
+        <!-- Player Info -->
+        <div class="player-info">
+            <div class="player-welcome">
+                <div class="player-identity">
+                    <span id="player-name-display">Jogador</span>
+                    <span id="player-nick-display" class="player-nick">@nick</span>
+                </div>
+                <button id="change-player" class="change-player-btn">Trocar Jogador</button>
+            </div>
+            <div class="player-stats">
+                <div class="stat">
+                    <span class="stat-label">Jogadas:</span>
+                    <span id="total-games">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Melhor Tempo:</span>
+                    <span id="personal-best">--</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Pontos:</span>
+                    <span id="player-points">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Posição:</span>
+                    <span id="global-position">#--</span>
+                </div>
             </div>
         </div>
-    </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/ranking.js"></script>
-    <script src="js/sheets-integration.js"></script>
+        <div class="game-area">
+            <!-- Área do pinheirinho -->
+            <div class="christmas-tree">
+                <div class="tree-section">
+                    <div class="section-label">PRE-STAGE</div>
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light pre-stage-1-left"></div>
+                            <div class="light pre-stage-1-right"></div>
+                        </div>
+                        <div class="light-pair">
+                            <div class="light pre-stage-2-left"></div>
+                            <div class="light pre-stage-2-right"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tree-section">
+                    <div class="section-label">STAGE</div>
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light stage-1-left"></div>
+                            <div class="light stage-1-right"></div>
+                        </div>
+                        <div class="light-pair">
+                            <div class="light stage-2-left"></div>
+                            <div class="light stage-2-right"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tree-section">
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light amber-1-left"></div>
+                            <div class="light amber-1-right"></div>
+                        </div>
+                    </div>
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light amber-2-left"></div>
+                            <div class="light amber-2-right"></div>
+                        </div>
+                    </div>
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light amber-3-left"></div>
+                            <div class="light amber-3-right"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tree-section">
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light green-left"></div>
+                            <div class="light green-right"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tree-section">
+                    <div class="light-row">
+                        <div class="light-pair">
+                            <div class="light red-left"></div>
+                            <div class="light red-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel de controle e informações -->
+            <div class="control-panel">
+                <div class="reaction-display">
+                    <h2>Tempo de Reação</h2>
+                    <div class="time-display">0.000</div>
+                    <div class="status-message">Aguardando início...</div>
+                </div>
+                
+                <button id="start-button" class="start-button">INICIAR CORRIDA</button>
+                
+                <div class="instructions">
+                    <p>Pressione o botão quando a luz VERDE acender!</p>
+                    <p>Largada queimada = Luz VERMELHA</p>
+                </div>
+
+                <!-- Conquistas -->
+                <div class="achievements" id="achievements">
+                    <!-- Conquistas serão inseridas dinamicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de estatísticas -->
+        <div class="stats-area">
+            <div class="ranking-section">
+                <div class="global-ranking">
+                    <h3>🏆 Ranking Global</h3>
+                    <div class="ranking-loading" id="global-ranking-loading">Carregando...</div>
+                    <ol id="global-ranking-list">
+                        <li>Carregando ranking...</li>
+                    </ol>
+                    <button id="refresh-ranking" class="refresh-btn">🔄 Atualizar</button>
+                </div>
+                
+                <div class="personal-ranking">
+                    <h3>📊 Seus Melhores Tempos</h3>
+                    <ol id="best-times-list">
+                        <li>Ainda sem registros</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="recent-section">
+                <div class="last-times">
+                    <h3>⏱️ Últimas Tentativas</h3>
+                    <ul id="last-times-list">
+                        <li>Ainda sem registros</li>
+                    </ul>
+                </div>
+                
+                <div class="daily-challenge">
+                    <h3>🎯 Desafio do Dia</h3>
+                    <div class="challenge-content">
+                        <p id="challenge-text">Faça um tempo abaixo de 0.300s</p>
+                        <div class="challenge-progress">
+                            <span id="challenge-progress-text">0/1 concluído</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="challenge-progress-bar"></div>
+                            </div>
+                        </div>
+                        <div class="challenge-reward">🏅 Recompensa: 100 pontos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Simulador Garagem do Frank &copy; 2025 | <span id="total-players">0</span> jogadores registrados</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Adicionar script do menu mobile -->
+    <script src="mobile-menu.js"></script>
 </body>
 </html>
-
