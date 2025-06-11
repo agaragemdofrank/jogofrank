@@ -1,390 +1,294 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Oficial - FrankTurbo.com</title>
-    <meta name="description" content="Loja oficial da Garagem do Frank - Camisetas, canecas, peças e produtos exclusivos.">
-    <link rel="icon" href="../images/logo.png" type="image/png">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="../css/shop.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Navigation -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <img src="../images/logo.png" alt="Garagem do Frank" class="logo-img">
-                    <span class="logo-text">FrankTurbo</span>
+// SCRIPT DE PRODUTOS ZERADO - GARAGEM DO FRANK
+// Estrutura pronta para quando os produtos forem adicionados
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Array de produtos - VAZIO para começar limpo
+    const produtos = [
+        // Quando adicionar produtos, use este formato:
+        // {
+        //     id: 1,
+        //     nome: "Nome do Produto",
+        //     preco: 99.99,
+        //     descricao: "Descrição do produto",
+        //     categoria: "categoria",
+        //     imagem: "caminho/para/imagem.jpg",
+        //     disponivel: true
+        // }
+    ];
+
+    // Categorias disponíveis
+    const categorias = [
+        'todos',
+        'ferramentas',
+        'pecas',
+        'acessorios',
+        'cursos',
+        'servicos'
+    ];
+
+    // Elementos do DOM
+    const produtosContainer = document.getElementById('produtos-container');
+    const filtroCategoria = document.getElementById('filtro-categoria');
+    const contadorProdutos = document.getElementById('contador-produtos');
+    const searchInput = document.getElementById('search-produtos');
+
+    // Função para renderizar produtos
+    function renderizarProdutos(produtosFiltrados = produtos) {
+        if (!produtosContainer) return;
+
+        // Se não há produtos, mostra mensagem
+        if (produtosFiltrados.length === 0) {
+            produtosContainer.innerHTML = `
+                <div class="produtos-vazio">
+                    <div class="vazio-content">
+                        <div class="vazio-icon">🛒</div>
+                        <h3>Loja em Construção</h3>
+                        <p>Em breve teremos produtos incríveis da Garagem do Frank!</p>
+                        <div class="vazio-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔧</span>
+                                <span>Ferramentas Profissionais</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🚗</span>
+                                <span>Peças Automotivas</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📚</span>
+                                <span>Cursos Exclusivos</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚙️</span>
+                                <span>Serviços Especializados</span>
+                            </div>
+                        </div>
+                        <p class="vazio-cta">
+                            <strong>Quer ser avisado quando lançarmos?</strong><br>
+                            <a href="contato.html" class="btn-contato">Entre em Contato</a>
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="nav-menu" id="nav-menu">
-                    <a href="../index.html" class="nav-link">Início</a>
-                    <a href="biografia.html" class="nav-link">Quem é o Frank?</a>
-                    <a href="historia.html" class="nav-link">Nossa História</a>
-                    <a href="parceiros.html" class="nav-link">Parceiros</a>
-                    <a href="produtos.html" class="nav-link active">Produtos</a>
-                    <a href="videos.html" class="nav-link">Vídeos</a>
-                    <a href="ajudar.html" class="nav-link">Ajudar</a>
-                    <a href="contato.html" class="nav-link">Contato</a>
+            `;
+            return;
+        }
+
+        // Renderiza produtos quando houver
+        produtosContainer.innerHTML = produtosFiltrados.map(produto => `
+            <div class="produto-card" data-categoria="${produto.categoria}">
+                <div class="produto-imagem">
+                    <img src="${produto.imagem}" alt="${produto.nome}" loading="lazy">
+                    ${!produto.disponivel ? '<div class="produto-indisponivel">Indisponível</div>' : ''}
                 </div>
-                
-                <div class="nav-toggle" id="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="page-content">
-        <!-- Hero Section -->
-        <section class="page-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="page-title">Loja Oficial</h1>
-                    <p class="page-subtitle">Produtos exclusivos da Garagem do Frank - Qualidade garantida e entrega para todo o Brasil</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Shop Categories -->
-        <section class="shop-categories">
-            <div class="container">
-                <div class="categories-nav">
-                    <button class="category-btn active" data-category="all">Todos</button>
-                    <button class="category-btn" data-category="clothing">Roupas</button>
-                    <button class="category-btn" data-category="accessories">Acessórios</button>
-                    <button class="category-btn" data-category="parts">Peças</button>
-                    <button class="category-btn" data-category="tools">Ferramentas</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products Grid -->
-        <section class="products-section">
-            <div class="container">
-                <div class="products-grid" id="products-grid">
-                    
-                    <!-- Clothing Products -->
-                    <div class="product-card" data-category="clothing">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">👕</span>
-                            </div>
-                            <div class="product-badge">Novo</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Camiseta Garagem do Frank</h3>
-                            <p class="product-description">Camiseta 100% algodão com logo oficial da Garagem do Frank</p>
-                            <div class="product-options">
-                                <span class="size-label">Tamanhos: P, M, G, GG</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 49,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('camiseta-oficial', 49.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="clothing">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">🧢</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Boné FrankTurbo</h3>
-                            <p class="product-description">Boné aba curva com bordado exclusivo da marca</p>
-                            <div class="product-options">
-                                <span class="size-label">Tamanho único ajustável</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 39,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('bone-frankturbo', 39.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="clothing">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">👔</span>
-                            </div>
-                            <div class="product-badge">Limitado</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Moletom Garagem Premium</h3>
-                            <p class="product-description">Moletom premium com capuz e logo bordado</p>
-                            <div class="product-options">
-                                <span class="size-label">Tamanhos: P, M, G, GG</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 89,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('moletom-premium', 89.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Accessories -->
-                    <div class="product-card" data-category="accessories">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">☕</span>
-                            </div>
-                            <div class="product-badge">Popular</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Caneca Garagem do Frank</h3>
-                            <p class="product-description">Caneca de porcelana 325ml com arte exclusiva</p>
-                            <div class="product-options">
-                                <span class="size-label">Capacidade: 325ml</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 24,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('caneca-oficial', 24.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="accessories">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">🔑</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Chaveiro FrankTurbo</h3>
-                            <p class="product-description">Chaveiro metálico com logo em relevo</p>
-                            <div class="product-options">
-                                <span class="size-label">Material: Metal cromado</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 14,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('chaveiro-metal', 14.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="accessories">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">📱</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Adesivo Pack</h3>
-                            <p class="product-description">Kit com 10 adesivos exclusivos da Garagem</p>
-                            <div class="product-options">
-                                <span class="size-label">10 adesivos variados</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 19,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('adesivo-pack', 19.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Parts -->
-                    <div class="product-card" data-category="parts">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">⚙️</span>
-                            </div>
-                            <div class="product-badge">Profissional</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Kit Preparação Básica</h3>
-                            <p class="product-description">Kit com peças essenciais para preparação de motor</p>
-                            <div class="product-options">
-                                <span class="size-label">Para motores 1.0 a 2.0</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 299,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('kit-preparacao', 299.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="product-card" data-category="parts">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">🔧</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Filtro de Ar Esportivo</h3>
-                            <p class="product-description">Filtro de ar de alta performance, lavável</p>
-                            <div class="product-options">
-                                <span class="size-label">Universal - Várias medidas</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 89,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('filtro-esportivo', 89.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="product-card" data-category="tools">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span class="product-icon">🔨</span>
-                            </div>
-                            <div class="product-badge">Recomendado</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Kit Ferramentas Básicas</h3>
-                            <p class="product-description">Kit com ferramentas essenciais para mecânica básica</p>
-                            <div class="product-options">
-                                <span class="size-label">15 peças profissionais</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="price">R$ 149,90</span>
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('kit-ferramentas', 149.90)">
-                                🛒 Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </div>
-
+                <div class="produto-info">
+                    <h3 class="produto-nome">${produto.nome}</h3>
+                    <p class="produto-descricao">${produto.descricao}</p>
+                    <div class="produto-preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</div>
+                    <button class="btn-produto ${!produto.disponivel ? 'disabled' : ''}" 
+                            ${!produto.disponivel ? 'disabled' : ''} 
+                            onclick="abrirProduto(${produto.id})">
+                        ${produto.disponivel ? 'Ver Detalhes' : 'Indisponível'}
+                    </button>
                 </div>
             </div>
-        </section>
+        `).join('');
+    }
 
-        <!-- Shopping Cart -->
-        <div class="cart-sidebar" id="cart-sidebar">
-            <div class="cart-header">
-                <h3>🛒 Carrinho</h3>
-                <button class="close-cart" onclick="toggleCart()">✕</button>
-            </div>
-            <div class="cart-items" id="cart-items">
-                <div class="empty-cart">
-                    <span class="empty-icon">🛒</span>
-                    <p>Seu carrinho está vazio</p>
-                </div>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total: R$ <span id="cart-total">0,00</span></span>
-                </div>
-                <button class="checkout-btn" onclick="checkout()">
-                    Finalizar Compra
-                </button>
-            </div>
-        </div>
+    // Função para filtrar por categoria
+    function filtrarPorCategoria(categoria) {
+        if (categoria === 'todos') {
+            renderizarProdutos(produtos);
+        } else {
+            const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
+            renderizarProdutos(produtosFiltrados);
+        }
+        atualizarContador();
+    }
 
-        <!-- Cart Toggle Button -->
-        <button class="cart-toggle" onclick="toggleCart()">
-            🛒 <span class="cart-count" id="cart-count">0</span>
-        </button>
+    // Função para buscar produtos
+    function buscarProdutos(termo) {
+        const produtosFiltrados = produtos.filter(produto => 
+            produto.nome.toLowerCase().includes(termo.toLowerCase()) ||
+            produto.descricao.toLowerCase().includes(termo.toLowerCase())
+        );
+        renderizarProdutos(produtosFiltrados);
+        atualizarContador();
+    }
 
-        <!-- Shipping Info -->
-        <section class="shipping-info">
-            <div class="container">
-                <div class="shipping-grid">
-                    <div class="shipping-item">
-                        <div class="shipping-icon">🚚</div>
-                        <h3>Frete Grátis</h3>
-                        <p>Para compras acima de R$ 99,00</p>
-                    </div>
-                    <div class="shipping-item">
-                        <div class="shipping-icon">🔒</div>
-                        <h3>Compra Segura</h3>
-                        <p>Pagamento 100% seguro e protegido</p>
-                    </div>
-                    <div class="shipping-item">
-                        <div class="shipping-icon">↩️</div>
-                        <h3>Troca Garantida</h3>
-                        <p>30 dias para trocas e devoluções</p>
-                    </div>
-                    <div class="shipping-item">
-                        <div class="shipping-icon">⭐</div>
-                        <h3>Qualidade Premium</h3>
-                        <p>Produtos selecionados com qualidade</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    // Função para atualizar contador
+    function atualizarContador() {
+        if (contadorProdutos) {
+            const produtosVisiveis = document.querySelectorAll('.produto-card').length;
+            contadorProdutos.textContent = `${produtosVisiveis} produto${produtosVisiveis !== 1 ? 's' : ''} encontrado${produtosVisiveis !== 1 ? 's' : ''}`;
+        }
+    }
 
-        <!-- Newsletter -->
-        <section class="newsletter-section">
-            <div class="container">
-                <div class="newsletter-content">
-                    <h2>Fique por Dentro das Novidades</h2>
-                    <p>Receba em primeira mão lançamentos, promoções e conteúdo exclusivo</p>
-                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                        <input type="email" placeholder="Seu melhor e-mail" required>
-                        <button type="submit">Inscrever-se</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+    // Event listeners
+    if (filtroCategoria) {
+        filtroCategoria.addEventListener('change', function() {
+            filtrarPorCategoria(this.value);
+        });
+    }
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logo.png" alt="Garagem do Frank">
-                        <span>FrankTurbo</span>
-                    </div>
-                    <p>O melhor conteúdo automotivo do Brasil!</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="../game/index.html">Simulador</a></li>
-                        <li><a href="biografia.html">Biografia</a></li>
-                        <li><a href="produtos.html">Loja</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📺 YouTube</a>
-                        <a href="#" class="social-link">📷 Instagram</a>
-                        <a href="#" class="social-link">📘 Facebook</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 FrankTurbo.com - Todos os direitos reservados</p>
-            </div>
-        </div>
-    </footer>
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            buscarProdutos(this.value);
+        });
+    }
 
-    <script src="../js/main.js"></script>
-    <script src="../js/shop.js"></script>
-</body>
-</html>
+    // Função global para abrir produto
+    window.abrirProduto = function(id) {
+        const produto = produtos.find(p => p.id === id);
+        if (produto) {
+            // Aqui você pode implementar modal ou redirecionamento
+            alert(`Produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2).replace('.', ',')}\n\nEm breve: sistema de compras completo!`);
+        }
+    };
+
+    // Função para adicionar produto (para uso futuro)
+    window.adicionarProduto = function(produto) {
+        produtos.push(produto);
+        renderizarProdutos();
+        atualizarContador();
+    };
+
+    // Função para remover produto (para uso futuro)
+    window.removerProduto = function(id) {
+        const index = produtos.findIndex(p => p.id === id);
+        if (index > -1) {
+            produtos.splice(index, 1);
+            renderizarProdutos();
+            atualizarContador();
+        }
+    };
+
+    // Inicialização
+    renderizarProdutos();
+    atualizarContador();
+
+    // Animações de entrada
+    setTimeout(() => {
+        const cards = document.querySelectorAll('.produto-card, .produtos-vazio');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    }, 100);
+});
+
+// CSS adicional para produtos vazios (adicionar ao CSS principal)
+const estilosVazio = `
+.produtos-vazio {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 3rem;
+}
+
+.vazio-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.vazio-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.vazio-content h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.vazio-content p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.vazio-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 8px;
+    color: #e2e8f0;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+}
+
+.vazio-cta {
+    margin-top: 2rem;
+    color: #94a3b8;
+}
+
+.btn-contato {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-contato:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    text-decoration: none;
+    color: white;
+}
+
+.produto-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .vazio-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .vazio-content {
+        padding: 1rem;
+    }
+    
+    .vazio-icon {
+        font-size: 3rem;
+    }
+    
+    .vazio-content h3 {
+        font-size: 1.5rem;
+    }
+}
+`;
+
+// Adiciona estilos ao documento
+if (!document.getElementById('estilos-produtos-vazio')) {
+    const style = document.createElement('style');
+    style.id = 'estilos-produtos-vazio';
+    style.textContent = estilosVazio;
+    document.head.appendChild(style);
+}
 
