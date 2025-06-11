@@ -7,6 +7,157 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/pages.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Correção específica para a logo no header */
+        .header .nav .nav-brand .logo {
+            width: 40px !important;
+            height: 40px !important;
+            max-width: 40px !important;
+            max-height: 40px !important;
+            object-fit: contain !important;
+            display: inline-block !important;
+        }
+        
+        .header .nav .nav-brand {
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+        
+        .header .nav .nav-brand .brand-text {
+            font-size: 1.2rem !important;
+            white-space: nowrap !important;
+        }
+
+        /* Timeline simplificada */
+        .history-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .history-section h3 {
+            color: #2563eb;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .history-date {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .history-content {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .history-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .history-content li {
+            margin: 0.5rem 0;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .partner-item {
+            background: rgba(37, 99, 235, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .partner-item strong {
+            color: #2563eb;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .partner-item span {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .current-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .project-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .stats-summary {
+            margin: 3rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #2563eb;
+            display: block;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .history-section {
+                padding: 1.5rem;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .current-projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -43,181 +194,158 @@
 
         <section class="content-section">
             <div class="container">
-                <div class="timeline-container">
-                    
-                    <div class="timeline-intro">
-                        <h2>A Transformação Mais Rápida do YouTube Automotivo</h2>
-                        <p class="lead">Em apenas <strong>5 meses</strong>, Frank saiu do zero em mecânica para se tornar referência em ensino automotivo. Esta é a história de uma revolução relâmpago.</p>
-                    </div>
-
-                    <div class="timeline">
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <span class="timeline-icon">💔</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h3>O Pesadelo dos Mecânicos (2021-2024)</h3>
-                                <p class="timeline-date">3 anos de decepção</p>
-                                <p>Tudo começou com um sonho: turbinar o <strong>Santana 1989 GLS</strong> que era refúgio em um momento difícil da vida. Mas o que deveria ser um projeto simples se transformou em 3 anos de pesadelo:</p>
-                                <ul>
-                                    <li><strong>Primeiro mecânico:</strong> 2 anos de enrolação</li>
-                                    <li><strong>Segundo mecânico:</strong> mais 6 meses perdidos</li>
-                                    <li><strong>Terceiro mecânico:</strong> indicado pelos "amigos", só levou o dinheiro</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <span class="timeline-icon">⚡</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h3>O Momento da Virada</h3>
-                                <p class="timeline-date">Janeiro 2025</p>
-                                <p>Cansado de ser enganado, Frank tomou a <strong>decisão que mudaria tudo</strong>: trouxe o carro para casa. Na venda da pista <strong>The Church Skatepark</strong>, recebeu um <strong>Escort GLX 1995 AP</strong> como parte do pagamento.</p>
-                                <p><strong>Em apenas uma semana</strong>, com a ajuda de 2 ou 3 amigos, Frank turbinou o Escort sozinho em casa. Foi o momento da descoberta: <em>"Se quero algo bem feito, faço eu mesmo."</em></p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <span class="timeline-icon">🚀</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h3>A Explosão de Projetos</h3>
-                                <p class="timeline-date">Fevereiro - Março 2025</p>
-                                <p>Com a confiança em alta, os projetos se multiplicaram em velocidade supersônica:</p>
-                                <ul>
-                                    <li><strong>XR300L Tornado Motard</strong> montada do zero</li>
-                                    <li><strong>Escort Turbo Forjado</strong> - o projeto que virou lenda</li>
-                                    <li><strong>Construção da garagem própria</strong></li>
-                                    <li><strong>Aquisição de ferramentas profissionais</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <span class="timeline-icon">🤝</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h3>Os Parceiros que Acreditaram</h3>
-                                <p class="timeline-date">Março - Abril 2025</p>
-                                <p>Grandes nomes apoiaram a visão de Frank desde o início:</p>
-                                <div class="partners-grid">
-                                    <div class="partner-item">
-                                        <strong>Retífica Silva</strong>
-                                        <span>Primeiro a acreditar no projeto</span>
-                                    </div>
-                                    <div class="partner-item">
-                                        <strong>RIFE Parts</strong>
-                                        <span>Parceria técnica fundamental</span>
-                                    </div>
-                                    <div class="partner-item">
-                                        <strong>Malaguty Bikes</strong>
-                                        <span>Apoio da loja de bicicletas</span>
-                                    </div>
-                                    <div class="partner-item">
-                                        <strong>Murilo da Fera Escapamentos</strong>
-                                        <span>O som que emociona</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <span class="timeline-icon">🎬</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h3>O Ecossistema Garagem do Frank</h3>
-                                <p class="timeline-date">Maio - Junho 2025</p>
-                                <p>A Garagem do Frank se transformou em um <strong>universo automotivo completo</strong>:</p>
-                                
-                                <div class="content-ecosystem">
-                                    <div class="ecosystem-item">
-                                        <h4>🎬 FrankVerso</h4>
-                                        <p>Vídeos dos projetos reais, mostrando cada parafuso, cada desafio, cada vitória.</p>
-                                    </div>
-                                    
-                                    <div class="ecosystem-item">
-                                        <h4>📚 TeleFrank</h4>
-                                        <p>Quadro educativo onde Frank ensina mecânica de forma didática e acessível.</p>
-                                    </div>
-                                    
-                                    <div class="ecosystem-item">
-                                        <h4>🎙️ FrankMente</h4>
-                                        <p>Podcast que estreia nos próximos meses, levando conversas automotivas para outro nível.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <span class="timeline-icon">🏆</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h3>Os Projetos Atuais</h3>
-                                <p class="timeline-date">Junho 2025 - Presente</p>
-                                <div class="current-projects">
-                                    <div class="project-card">
-                                        <h4>🚗 Escort Turbo</h4>
-                                        <p>A lenda que continua evoluindo</p>
-                                    </div>
-                                    <div class="project-card">
-                                        <h4>🏍️ Tornado Motard</h4>
-                                        <p>Adrenalina sobre duas rodas</p>
-                                    </div>
-                                    <div class="project-card">
-                                        <h4>🚙 Santana 2.5 5cc</h4>
-                                        <p>O projeto que começou tudo, agora realizado</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="philosophy-section">
-                        <h2>A Filosofia Garagem do Frank</h2>
-                        <blockquote class="main-quote">
-                            "Não importa quantas vezes te enganem. Não importa quantos 'não' você escute. Se você tem paixão e determinação, pode construir seu próprio caminho - parafuso por parafuso, projeto por projeto."
-                            <cite>- Frank</cite>
-                        </blockquote>
-                    </div>
-
-                    <div class="future-section">
-                        <h2>O Futuro</h2>
-                        <p>A Garagem do Frank representa a <strong>nova era do automobilismo brasileiro</strong>: autêntica, educativa e inspiradora. Em apenas 5 meses, Frank provou que com conhecimento, parceiros certos e muita determinação, <strong>qualquer sonho automotivo pode se tornar realidade</strong>.</p>
-                        
-                        <p>Esta é apenas o começo de uma revolução que vai inspirar milhares de pessoas a realizarem seus próprios projetos, provando que <strong>velocidade não é só no asfalto - é também na vida</strong>.</p>
-                    </div>
-
-                    <div class="stats-summary">
-                        <h3>5 Meses em Números</h3>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-number">5</span>
-                                <span class="stat-label">Meses de Revolução</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">3</span>
-                                <span class="stat-label">Projetos Épicos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">4</span>
-                                <span class="stat-label">Parceiros Estratégicos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">∞</span>
-                                <span class="stat-label">Possibilidades</span>
-                            </div>
-                        </div>
-                    </div>
-
+                
+                <div class="content-intro">
+                    <h2>A Transformação Mais Rápida do YouTube Automotivo</h2>
+                    <p class="lead">Em apenas <strong>5 meses</strong>, Frank saiu do zero em mecânica para se tornar referência em ensino automotivo. Esta é a história de uma revolução relâmpago.</p>
                 </div>
+
+                <div class="history-section">
+                    <h3>💔 O Pesadelo dos Mecânicos</h3>
+                    <p class="history-date">2021-2024 • 3 anos de decepção</p>
+                    <div class="history-content">
+                        <p>Tudo começou com um sonho: turbinar o <strong>Santana 1989 GLS</strong> que era refúgio em um momento difícil da vida. Mas o que deveria ser um projeto simples se transformou em 3 anos de pesadelo:</p>
+                        <ul>
+                            <li><strong>Primeiro mecânico:</strong> 2 anos de enrolação</li>
+                            <li><strong>Segundo mecânico:</strong> mais 6 meses perdidos</li>
+                            <li><strong>Terceiro mecânico:</strong> indicado pelos "amigos", só levou o dinheiro</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>⚡ O Momento da Virada</h3>
+                    <p class="history-date">Janeiro 2025</p>
+                    <div class="history-content">
+                        <p>Cansado de ser enganado, Frank tomou a <strong>decisão que mudaria tudo</strong>: trouxe o carro para casa. Na venda da pista <strong>The Church Skatepark</strong>, recebeu um <strong>Escort GLX 1995 AP</strong> como parte do pagamento.</p>
+                        <p><strong>Em apenas uma semana</strong>, com a ajuda de 2 ou 3 amigos, Frank turbinou o Escort sozinho em casa. Foi o momento da descoberta: <em>"Se quero algo bem feito, faço eu mesmo."</em></p>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>🚀 A Explosão de Projetos</h3>
+                    <p class="history-date">Fevereiro - Março 2025</p>
+                    <div class="history-content">
+                        <p>Com a confiança em alta, os projetos se multiplicaram em velocidade supersônica:</p>
+                        <ul>
+                            <li><strong>XR300L Tornado Motard</strong> montada do zero</li>
+                            <li><strong>Escort Turbo Forjado</strong> - o projeto que virou lenda</li>
+                            <li><strong>Construção da garagem própria</strong></li>
+                            <li><strong>Aquisição de ferramentas profissionais</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>🤝 Os Parceiros que Acreditaram</h3>
+                    <p class="history-date">Março - Abril 2025</p>
+                    <div class="history-content">
+                        <p>Grandes nomes apoiaram a visão de Frank desde o início:</p>
+                        <div class="partners-grid">
+                            <div class="partner-item">
+                                <strong>Retífica Silva</strong>
+                                <span>Primeiro a acreditar no projeto</span>
+                            </div>
+                            <div class="partner-item">
+                                <strong>RIFE Parts</strong>
+                                <span>Parceria técnica fundamental</span>
+                            </div>
+                            <div class="partner-item">
+                                <strong>Malaguty Bikes</strong>
+                                <span>Apoio da loja de bicicletas</span>
+                            </div>
+                            <div class="partner-item">
+                                <strong>Fera Escapamentos</strong>
+                                <span>O som que emociona</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>🎬 O Ecossistema Garagem do Frank</h3>
+                    <p class="history-date">Maio - Junho 2025</p>
+                    <div class="history-content">
+                        <p>A Garagem do Frank se transformou em um <strong>universo automotivo completo</strong>:</p>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h4 style="color: #2563eb; margin-bottom: 0.5rem;">🎬 FrankVerso</h4>
+                            <p>Vídeos dos projetos reais, mostrando cada parafuso, cada desafio, cada vitória.</p>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h4 style="color: #2563eb; margin-bottom: 0.5rem;">📚 TeleFrank</h4>
+                            <p>Quadro educativo onde Frank ensina mecânica de forma didática e acessível.</p>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h4 style="color: #2563eb; margin-bottom: 0.5rem;">🎙️ FrankMente</h4>
+                            <p>Podcast que estreia nos próximos meses, levando conversas automotivas para outro nível.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>🏆 Os Projetos Atuais</h3>
+                    <p class="history-date">Junho 2025 - Presente</p>
+                    <div class="history-content">
+                        <div class="current-projects">
+                            <div class="project-card">
+                                <h4>🚗 Escort Turbo</h4>
+                                <p>A lenda que continua evoluindo</p>
+                            </div>
+                            <div class="project-card">
+                                <h4>🏍️ Tornado Motard</h4>
+                                <p>Adrenalina sobre duas rodas</p>
+                            </div>
+                            <div class="project-card">
+                                <h4>🚙 Santana 2.5 5cc</h4>
+                                <p>O projeto que começou tudo, agora realizado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="philosophy-section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 2rem; border-radius: 15px; border-left: 4px solid #2563eb; margin: 3rem 0;">
+                    <h2 style="color: #2563eb; margin-bottom: 1rem;">A Filosofia Garagem do Frank</h2>
+                    <blockquote style="border-left: 3px solid #2563eb; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #3b82f6;">
+                        "Não importa quantas vezes te enganem. Não importa quantos 'não' você escute. Se você tem paixão e determinação, pode construir seu próprio caminho - parafuso por parafuso, projeto por projeto."
+                        <cite style="display: block; margin-top: 0.5rem; font-size: 0.9rem; color: #94a3b8;">- Frank</cite>
+                    </blockquote>
+                </div>
+
+                <div class="future-section" style="text-align: center; margin: 3rem 0;">
+                    <h2 style="color: #2563eb; margin-bottom: 1rem;">O Futuro</h2>
+                    <p style="color: #e2e8f0; line-height: 1.6; margin-bottom: 1rem;">
+                        A Garagem do Frank representa a <strong>nova era do automobilismo brasileiro</strong>: autêntica, educativa e inspiradora. Em apenas 5 meses, Frank provou que com conhecimento, parceiros certos e muita determinação, <strong>qualquer sonho automotivo pode se tornar realidade</strong>.
+                    </p>
+                    <p style="color: #e2e8f0; line-height: 1.6;">
+                        Esta é apenas o começo de uma revolução que vai inspirar milhares de pessoas a realizarem seus próprios projetos, provando que <strong>velocidade não é só no asfalto - é também na vida</strong>.
+                    </p>
+                </div>
+
+                <div class="stats-summary">
+                    <h3 style="text-align: center; color: #2563eb; margin-bottom: 2rem;">5 Meses em Números</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Meses de Revolução</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Projetos Épicos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Parceiros Estratégicos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Possibilidades</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
