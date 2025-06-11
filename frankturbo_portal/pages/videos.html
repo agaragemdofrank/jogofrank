@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos - FrankTurbo.com</title>
+    <meta name="description" content="Todos os vídeos do canal A Garagem do Frank organizados por categoria e projeto.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="../images/logo.png" alt="Garagem do Frank" class="logo-img">
+                    <span class="logo-text">FrankTurbo</span>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="biografia.html" class="nav-link">Quem é o Frank?</a>
+                    <a href="historia.html" class="nav-link">Nossa História</a>
+                    <a href="parceiros.html" class="nav-link">Parceiros</a>
+                    <a href="produtos.html" class="nav-link">Produtos</a>
+                    <a href="videos.html" class="nav-link active">Vídeos</a>
+                    <a href="ajudar.html" class="nav-link">Ajudar</a>
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="page-title">Nossos Vídeos</h1>
+                    <p class="page-subtitle">Todo o conteúdo do canal A Garagem do Frank organizado por categoria</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Channel Stats -->
+        <section class="channel-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📺</div>
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Inscritos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎬</div>
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Vídeos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👀</div>
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">Visualizações</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Horas de Conteúdo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Categories -->
+        <section class="video-categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Categorias de Vídeos</h2>
+                    <p>Explore nosso conteúdo organizado por tema</p>
+                </div>
+
+                <div class="categories-grid">
+                    <div class="category-card" onclick="filterVideos('projetos')">
+                        <div class="category-icon">🏎️</div>
+                        <h3>Projetos Épicos</h3>
+                        <p>Restaurações completas e preparações de carros</p>
+                        <div class="category-count">25 vídeos</div>
+                    </div>
+
+                    <div class="category-card" onclick="filterVideos('tutoriais')">
+                        <div class="category-icon">🔧</div>
+                        <h3>Tutoriais</h3>
+                        <p>Dicas e técnicas de mecânica automotiva</p>
+                        <div class="category-count">45 vídeos</div>
+                    </div>
+
+                    <div class="category-card" onclick="filterVideos('reviews')">
+                        <div class="category-icon">⭐</div>
+                        <h3>Reviews</h3>
+                        <p>Análises de carros, peças e ferramentas</p>
+                        <div class="category-count">30 vídeos</div>
+                    </div>
+
+                    <div class="category-card" onclick="filterVideos('bastidores')">
+                        <div class="category-icon">🎬</div>
+                        <h3>Bastidores</h3>
+                        <p>Por trás das câmeras da Garagem do Frank</p>
+                        <div class="category-count">15 vídeos</div>
+                    </div>
+
+                    <div class="category-card" onclick="filterVideos('eventos')">
+                        <div class="category-icon">🏁</div>
+                        <h3>Eventos</h3>
+                        <p>Encontros, corridas e eventos automotivos</p>
+                        <div class="category-count">20 vídeos</div>
+                    </div>
+
+                    <div class="category-card" onclick="filterVideos('lives')">
+                        <div class="category-icon">🔴</div>
+                        <h3>Lives</h3>
+                        <p>Transmissões ao vivo e interação com a comunidade</p>
+                        <div class="category-count">35 vídeos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Videos -->
+        <section class="featured-videos">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Vídeos em Destaque</h2>
+                    <p>Os vídeos mais populares do canal</p>
+                </div>
+
+                <div class="videos-grid" id="videos-grid">
+                    <div class="video-card" data-category="projetos">
+                        <div class="video-thumbnail">
+                            <div class="thumbnail-placeholder">
+                                <span class="play-icon">▶️</span>
+                            </div>
+                            <div class="video-duration">15:32</div>
+                            <div class="video-views">1.2M visualizações</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">ESCORT TURBO - TRANSFORMAÇÃO COMPLETA!</h3>
+                            <p class="video-description">
+                                Acompanhe a transformação completa do nosso Escort em uma máquina de arrancada. 
+                                Preparação de motor, turbo e muito mais!
+                            </p>
+                            <div class="video-meta">
+                                <span class="video-date">há 2 semanas</span>
+                                <span class="video-category">Projetos Épicos</span>
+                            </div>
+                            <a href="#" class="watch-btn">Assistir no YouTube</a>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="tutoriais">
+                        <div class="video-thumbnail">
+                            <div class="thumbnail-placeholder">
+                                <span class="play-icon">▶️</span>
+                            </div>
+                            <div class="video-duration">8:45</div>
+                            <div class="video-views">800K visualizações</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">COMO TROCAR ÓLEO DO MOTOR - TUTORIAL COMPLETO</h3>
+                            <p class="video-description">
+                                Tutorial passo a passo para trocar o óleo do motor. Dicas importantes 
+                                e cuidados que você precisa saber.
+                            </p>
+                            <div class="video-meta">
+                                <span class="video-date">há 1 mês</span>
+                                <span class="video-category">Tutoriais</span>
+                            </div>
+                            <a href="#" class="watch-btn">Assistir no YouTube</a>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="projetos">
+                        <div class="video-thumbnail">
+                            <div class="thumbnail-placeholder">
+                                <span class="play-icon">▶️</span>
+                            </div>
+                            <div class="video-duration">22:18</div>
+                            <div class="video-views">950K visualizações</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">FUSCA PREPARADO - MOTOR BOXER MODIFICADO</h3>
+                            <p class="video-description">
+                                Restauração e preparação completa de um Fusca clássico. 
+                                Motor boxer modificado e muito trabalho de qualidade!
+                            </p>
+                            <div class="video-meta">
+                                <span class="video-date">há 3 semanas</span>
+                                <span class="video-category">Projetos Épicos</span>
+                            </div>
+                            <a href="#" class="watch-btn">Assistir no YouTube</a>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="reviews">
+                        <div class="video-thumbnail">
+                            <div class="thumbnail-placeholder">
+                                <span class="play-icon">▶️</span>
+                            </div>
+                            <div class="video-duration">12:30</div>
+                            <div class="video-views">600K visualizações</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">REVIEW: MELHOR FERRAMENTA PARA MECÂNICO</h3>
+                            <p class="video-description">
+                                Review completo das melhores ferramentas para mecânica. 
+                                Custo-benefício e qualidade analisados.
+                            </p>
+                            <div class="video-meta">
+                                <span class="video-date">há 1 semana</span>
+                                <span class="video-category">Reviews</span>
+                            </div>
+                            <a href="#" class="watch-btn">Assistir no YouTube</a>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="eventos">
+                        <div class="video-thumbnail">
+                            <div class="thumbnail-placeholder">
+                                <span class="play-icon">▶️</span>
+                            </div>
+                            <div class="video-duration">18:45</div>
+                            <div class="video-views">750K visualizações</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">ENCONTRO DE CARROS ANTIGOS - EVENTO ÉPICO!</h3>
+                            <p class="video-description">
+                                Cobertura completa do maior encontro de carros antigos da região. 
+                                Carros incríveis e muita história!
+                            </p>
+                            <div class="video-meta">
+                                <span class="video-date">há 2 meses</span>
+                                <span class="video-category">Eventos</span>
+                            </div>
+                            <a href="#" class="watch-btn">Assistir no YouTube</a>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="lives">
+                        <div class="video-thumbnail">
+                            <div class="thumbnail-placeholder">
+                                <span class="play-icon">🔴</span>
+                            </div>
+                            <div class="video-duration">1:32:15</div>
+                            <div class="video-views">400K visualizações</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">LIVE: RESPONDENDO DÚVIDAS DOS INSCRITOS</h3>
+                            <p class="video-description">
+                                Live especial respondendo dúvidas sobre mecânica, projetos 
+                                e muito mais. Interação direta com a comunidade!
+                            </p>
+                            <div class="video-meta">
+                                <span class="video-date">há 1 semana</span>
+                                <span class="video-category">Lives</span>
+                            </div>
+                            <a href="#" class="watch-btn">Assistir no YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="load-more">
+                    <button class="btn btn-secondary" onclick="loadMoreVideos()">
+                        Carregar Mais Vídeos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Channel -->
+        <section class="youtube-channel">
+            <div class="container">
+                <div class="channel-cta">
+                    <div class="channel-info">
+                        <h2>Se Inscreva no Canal!</h2>
+                        <p>
+                            Não perca nenhum vídeo novo! Se inscreva no canal A Garagem do Frank 
+                            e ative o sininho para receber notificações de todos os nossos projetos épicos.
+                        </p>
+                        <div class="channel-benefits">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🔔</span>
+                                <span>Notificações de vídeos novos</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🎬</span>
+                                <span>Conteúdo exclusivo</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">💬</span>
+                                <span>Interação direta nos comentários</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🏆</span>
+                                <span>Acesso a lives especiais</span>
+                            </div>
+                        </div>
+                        <div class="channel-buttons">
+                            <a href="#" class="btn btn-primary">📺 Se Inscrever</a>
+                            <a href="#" class="btn btn-secondary">🔔 Ativar Sininho</a>
+                        </div>
+                    </div>
+                    <div class="channel-visual">
+                        <div class="youtube-placeholder">
+                            <span class="youtube-icon">📺</span>
+                            <h3>A Garagem do Frank</h3>
+                            <p>500K+ Inscritos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="Garagem do Frank">
+                        <span>FrankTurbo</span>
+                    </div>
+                    <p>O melhor conteúdo automotivo do Brasil!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="../game/index.html">Simulador</a></li>
+                        <li><a href="biografia.html">Biografia</a></li>
+                        <li><a href="produtos.html">Loja</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📺 YouTube</a>
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">📘 Facebook</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FrankTurbo.com - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/videos.js"></script>
+</body>
+</html>
+

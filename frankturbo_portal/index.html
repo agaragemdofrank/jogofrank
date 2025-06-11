@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrankTurbo.com - A Garagem do Frank</title>
+    <meta name="description" content="Portal oficial da Garagem do Frank - Simulador de arrancada, conteúdo automotivo e muito mais!">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.png" alt="Garagem do Frank" class="logo-img">
+                    <span class="logo-text">FrankTurbo</span>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link active">Início</a>
+                    <a href="pages/biografia.html" class="nav-link">Quem é o Frank?</a>
+                    <a href="pages/historia.html" class="nav-link">Nossa História</a>
+                    <a href="pages/parceiros.html" class="nav-link">Parceiros</a>
+                    <a href="pages/produtos.html" class="nav-link">Produtos</a>
+                    <a href="pages/videos.html" class="nav-link">Vídeos</a>
+                    <a href="pages/ajudar.html" class="nav-link">Ajudar</a>
+                    <a href="pages/contato.html" class="nav-link">Contato</a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <h1 class="hero-title">
+                            Bem-vindo à <span class="highlight">Garagem do Frank</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            O melhor conteúdo automotivo do Brasil! Projetos épicos, simulador de arrancada e muito mais!
+                        </p>
+                        
+                        <!-- Game Card -->
+                        <div class="game-card" onclick="redirectToGame()">
+                            <div class="game-card-header">
+                                <div class="game-icon">🏎️</div>
+                                <div class="game-info">
+                                    <h3>Simulador de Arrancada</h3>
+                                    <p>Teste seus reflexos no simulador mais viciante!</p>
+                                </div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat">
+                                    <span class="stat-number" id="total-players">1,247</span>
+                                    <span class="stat-label">Jogadores</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" id="total-games">15,892</span>
+                                    <span class="stat-label">Partidas</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" id="best-record">0.089s</span>
+                                    <span class="stat-label">Recorde</span>
+                                </div>
+                            </div>
+                            <div class="game-cta">
+                                <span>🎮 Clique para jogar agora!</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" onclick="redirectToGame()">
+                                🎮 Jogar Agora
+                            </button>
+                            <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                                📖 Conhecer Frank
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-right">
+                        <!-- Simplified World Ranking -->
+                        <div class="ranking-card-simple">
+                            <div class="ranking-header-simple">
+                                <h3>🏆 Top Pilotos</h3>
+                                <span class="ranking-subtitle">Melhores tempos</span>
+                            </div>
+                            <div class="ranking-list-simple" id="ranking-list">
+                                <div class="ranking-item-simple">
+                                    <span class="rank-pos">1º</span>
+                                    <span class="rank-nick">SpeedDemon</span>
+                                    <span class="rank-time">0.089s</span>
+                                </div>
+                                <div class="ranking-item-simple">
+                                    <span class="rank-pos">2º</span>
+                                    <span class="rank-nick">TurboFrank</span>
+                                    <span class="rank-time">0.092s</span>
+                                </div>
+                                <div class="ranking-item-simple">
+                                    <span class="rank-pos">3º</span>
+                                    <span class="rank-nick">RocketMan</span>
+                                    <span class="rank-time">0.095s</span>
+                                </div>
+                                <div class="ranking-item-simple">
+                                    <span class="rank-pos">4º</span>
+                                    <span class="rank-nick">NitroQueen</span>
+                                    <span class="rank-time">0.098s</span>
+                                </div>
+                                <div class="ranking-item-simple">
+                                    <span class="rank-pos">5º</span>
+                                    <span class="rank-nick">V8Thunder</span>
+                                    <span class="rank-time">0.101s</span>
+                                </div>
+                            </div>
+                            <div class="ranking-footer-simple">
+                                <button class="btn-ranking-simple" onclick="redirectToGame()">
+                                    🎮 Jogar Agora
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre a Garagem do Frank</h2>
+                    <p>Conheça a história por trás do canal automotivo que conquistou o Brasil</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">👤</div>
+                        <h3>Quem é o Frank?</h3>
+                        <p>Conheça a trajetória de Jhonatan Frank, o mecânico que virou fenômeno no YouTube.</p>
+                        <a href="pages/biografia.html" class="card-link">Ler mais →</a>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">📖</div>
+                        <h3>Nossa História</h3>
+                        <p>Desde os primeiros vídeos até se tornar referência em conteúdo automotivo.</p>
+                        <a href="pages/historia.html" class="card-link">Ler mais →</a>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Parceiros</h3>
+                        <p>Conheça as marcas e empresas que apoiam nossos projetos épicos.</p>
+                        <a href="pages/parceiros.html" class="card-link">Ver parceiros →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore o Portal</h2>
+                    <p>Tudo que você precisa em um só lugar</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card" onclick="window.location.href='pages/produtos.html'">
+                        <div class="feature-icon">🛒</div>
+                        <h3>Loja Oficial</h3>
+                        <p>Camisetas, canecas, peças e produtos exclusivos da Garagem do Frank.</p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="window.location.href='pages/videos.html'">
+                        <div class="feature-icon">📺</div>
+                        <h3>Vídeos</h3>
+                        <p>Todos os vídeos do canal organizados por categoria e projeto.</p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="window.location.href='pages/ajudar.html'">
+                        <div class="feature-icon">💝</div>
+                        <h3>Apoie o Canal</h3>
+                        <p>Doações, patrocínio e formas de ajudar nossos projetos.</p>
+                    </div>
+                    
+                    <div class="feature-card" onclick="window.location.href='pages/contato.html'">
+                        <div class="feature-icon">📞</div>
+                        <h3>Contato</h3>
+                        <p>Entre em contato conosco para parcerias e colaborações.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Garagem do Frank">
+                        <span>FrankTurbo</span>
+                    </div>
+                    <p>O melhor conteúdo automotivo do Brasil!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="game/index.html">Simulador</a></li>
+                        <li><a href="pages/biografia.html">Biografia</a></li>
+                        <li><a href="pages/produtos.html">Loja</a></li>
+                        <li><a href="pages/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📺 YouTube</a>
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">📘 Facebook</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FrankTurbo.com - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ranking.js"></script>
+    <script src="js/sheets-integration.js"></script>
+</body>
+</html>
+

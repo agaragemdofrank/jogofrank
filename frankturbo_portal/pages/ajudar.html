@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajudar - FrankTurbo.com</title>
+    <meta name="description" content="Apoie a Garagem do Frank - Doações, patrocínio e formas de ajudar nossos projetos.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="../images/logo.png" alt="Garagem do Frank" class="logo-img">
+                    <span class="logo-text">FrankTurbo</span>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="biografia.html" class="nav-link">Quem é o Frank?</a>
+                    <a href="historia.html" class="nav-link">Nossa História</a>
+                    <a href="parceiros.html" class="nav-link">Parceiros</a>
+                    <a href="produtos.html" class="nav-link">Produtos</a>
+                    <a href="videos.html" class="nav-link">Vídeos</a>
+                    <a href="ajudar.html" class="nav-link active">Ajudar</a>
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="page-title">Apoie Nossos Projetos</h1>
+                    <p class="page-subtitle">Ajude a Garagem do Frank a continuar criando conteúdo épico e projetos incríveis</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Options -->
+        <section class="support-options">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Como Você Pode Ajudar</h2>
+                    <p>Existem várias formas de apoiar nosso trabalho e fazer parte da família FrankTurbo</p>
+                </div>
+
+                <div class="support-grid">
+                    <div class="support-card featured">
+                        <div class="support-icon">💰</div>
+                        <h3>Doações Diretas</h3>
+                        <p>
+                            Contribua diretamente para nossos projetos através de doações. 
+                            Cada valor ajuda a comprar peças, ferramentas e equipamentos.
+                        </p>
+                        <div class="support-benefits">
+                            <span class="benefit-tag">PIX Disponível</span>
+                            <span class="benefit-tag">Valores Livres</span>
+                            <span class="benefit-tag">Agradecimento no Vídeo</span>
+                        </div>
+                        <button class="support-btn" onclick="showDonationOptions()">
+                            💝 Fazer Doação
+                        </button>
+                    </div>
+
+                    <div class="support-card featured">
+                        <div class="support-icon">🏢</div>
+                        <h3>Patrocínio Empresarial</h3>
+                        <p>
+                            Sua empresa pode patrocinar nossos projetos e ter exposição 
+                            para milhões de pessoas apaixonadas por carros.
+                        </p>
+                        <div class="support-benefits">
+                            <span class="benefit-tag">Exposição no YouTube</span>
+                            <span class="benefit-tag">Menção nos Vídeos</span>
+                            <span class="benefit-tag">Logo no Portal</span>
+                        </div>
+                        <button class="support-btn" onclick="showSponsorshipInfo()">
+                            🤝 Ser Patrocinador
+                        </button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">🔧</div>
+                        <h3>Doação de Peças</h3>
+                        <p>
+                            Tem peças automotivas paradas? Doe para nossos projetos 
+                            e veja elas ganharem vida novamente!
+                        </p>
+                        <div class="support-benefits">
+                            <span class="benefit-tag">Peças Usadas OK</span>
+                            <span class="benefit-tag">Retirada Local</span>
+                        </div>
+                        <button class="support-btn" onclick="showPartsInfo()">
+                            🔩 Doar Peças
+                        </button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">🛠️</div>
+                        <h3>Doação de Ferramentas</h3>
+                        <p>
+                            Ferramentas em bom estado são sempre bem-vindas 
+                            para melhorar nosso equipamento da garagem.
+                        </p>
+                        <div class="support-benefits">
+                            <span class="benefit-tag">Estado Funcional</span>
+                            <span class="benefit-tag">Agradecimento</span>
+                        </div>
+                        <button class="support-btn" onclick="showToolsInfo()">
+                            🔨 Doar Ferramentas
+                        </button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">🎬</div>
+                        <h3>Apoio de Conteúdo</h3>
+                        <p>
+                            Compartilhe nossos vídeos, comente, curta e ajude 
+                            a divulgar nosso trabalho para mais pessoas.
+                        </p>
+                        <div class="support-benefits">
+                            <span class="benefit-tag">Gratuito</span>
+                            <span class="benefit-tag">Muito Importante</span>
+                        </div>
+                        <button class="support-btn" onclick="shareContent()">
+                            📢 Compartilhar
+                        </button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">🛒</div>
+                        <h3>Comprar na Loja</h3>
+                        <p>
+                            Adquira produtos oficiais da Garagem do Frank. 
+                            Cada compra ajuda a financiar novos projetos.
+                        </p>
+                        <div class="support-benefits">
+                            <span class="benefit-tag">Produtos Oficiais</span>
+                            <span class="benefit-tag">Qualidade Garantida</span>
+                        </div>
+                        <button class="support-btn" onclick="window.location.href='produtos.html'">
+                            🛍️ Visitar Loja
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Modal -->
+        <div class="modal" id="donation-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>💝 Fazer Doação</h3>
+                    <button class="close-modal" onclick="closeModal('donation-modal')">✕</button>
+                </div>
+                <div class="modal-body">
+                    <p>Escolha a forma de doação que preferir:</p>
+                    
+                    <div class="donation-options">
+                        <div class="donation-option">
+                            <h4>💳 PIX</h4>
+                            <p>Chave PIX: <strong>garagemdofrank@email.com</strong></p>
+                            <button class="copy-btn" onclick="copyToClipboard('garagemdofrank@email.com')">
+                                📋 Copiar Chave PIX
+                            </button>
+                        </div>
+                        
+                        <div class="donation-option">
+                            <h4>🏦 Transferência Bancária</h4>
+                            <p>
+                                <strong>Banco:</strong> Banco do Brasil<br>
+                                <strong>Agência:</strong> 1234-5<br>
+                                <strong>Conta:</strong> 12345-6<br>
+                                <strong>Titular:</strong> Jhonatan Frank
+                            </p>
+                        </div>
+                        
+                        <div class="donation-option">
+                            <h4>💰 Valores Sugeridos</h4>
+                            <div class="suggested-amounts">
+                                <button class="amount-btn">R$ 10,00</button>
+                                <button class="amount-btn">R$ 25,00</button>
+                                <button class="amount-btn">R$ 50,00</button>
+                                <button class="amount-btn">R$ 100,00</button>
+                            </div>
+                            <p><small>Ou qualquer valor que desejar!</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-note">
+                        <p>
+                            <strong>Importante:</strong> Após fazer a doação, envie o comprovante 
+                            pelo nosso WhatsApp para recebermos o agradecimento especial!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goals Section -->
+        <section class="goals-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Metas e Objetivos</h2>
+                    <p>Veja como suas contribuições nos ajudam a alcançar nossos objetivos</p>
+                </div>
+
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3>🔧 Novas Ferramentas</h3>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                                <span class="progress-text">65% - R$ 3.250 / R$ 5.000</span>
+                            </div>
+                        </div>
+                        <p>
+                            Queremos adquirir novas ferramentas profissionais para 
+                            melhorar a qualidade dos nossos projetos.
+                        </p>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3>🎬 Equipamentos de Gravação</h3>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-text">40% - R$ 4.000 / R$ 10.000</span>
+                            </div>
+                        </div>
+                        <p>
+                            Câmeras e equipamentos de áudio profissionais para 
+                            melhorar a qualidade dos nossos vídeos.
+                        </p>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <h3>🏭 Expansão da Garagem</h3>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%"></div>
+                                </div>
+                                <span class="progress-text">25% - R$ 12.500 / R$ 50.000</span>
+                            </div>
+                        </div>
+                        <p>
+                            Ampliar nossa garagem para comportar projetos maiores 
+                            e mais ambiciosos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supporters -->
+        <section class="supporters-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nossos Apoiadores</h2>
+                    <p>Agradecimento especial a quem já nos ajudou</p>
+                </div>
+
+                <div class="supporters-grid">
+                    <div class="supporter-card">
+                        <div class="supporter-avatar">👤</div>
+                        <h4>João Silva</h4>
+                        <p>Doação de R$ 100,00</p>
+                        <span class="supporter-date">Dezembro 2024</span>
+                    </div>
+
+                    <div class="supporter-card">
+                        <div class="supporter-avatar">👤</div>
+                        <h4>Maria Santos</h4>
+                        <p>Doação de peças para Escort</p>
+                        <span class="supporter-date">Novembro 2024</span>
+                    </div>
+
+                    <div class="supporter-card">
+                        <div class="supporter-avatar">👤</div>
+                        <h4>Carlos Oliveira</h4>
+                        <p>Doação de R$ 250,00</p>
+                        <span class="supporter-date">Novembro 2024</span>
+                    </div>
+
+                    <div class="supporter-card">
+                        <div class="supporter-avatar">🏢</div>
+                        <h4>AutoPeças Premium</h4>
+                        <p>Patrocínio mensal</p>
+                        <span class="supporter-date">Parceiro oficial</span>
+                    </div>
+                </div>
+
+                <div class="become-supporter">
+                    <p>Quer aparecer aqui? <strong>Faça sua contribuição e seja reconhecido!</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact for Support -->
+        <section class="support-contact">
+            <div class="container">
+                <div class="contact-cta">
+                    <h2>Tem Dúvidas sobre Como Ajudar?</h2>
+                    <p>
+                        Entre em contato conosco! Estamos sempre dispostos a conversar 
+                        sobre parcerias, doações e formas de colaboração.
+                    </p>
+                    <div class="contact-buttons">
+                        <a href="contato.html" class="btn btn-primary">📞 Entrar em Contato</a>
+                        <a href="#" class="btn btn-secondary">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="Garagem do Frank">
+                        <span>FrankTurbo</span>
+                    </div>
+                    <p>O melhor conteúdo automotivo do Brasil!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="../game/index.html">Simulador</a></li>
+                        <li><a href="biografia.html">Biografia</a></li>
+                        <li><a href="produtos.html">Loja</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📺 YouTube</a>
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">📘 Facebook</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FrankTurbo.com - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/support.js"></script>
+</body>
+</html>
+
